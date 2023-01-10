@@ -18,8 +18,7 @@ public class RunClient {
 
         outToServer.println("I Love This Course");
         System.out.println(inFromServer.readLine());
-        outToServer.println("I Love ");
-        System.out.println(inFromServer.readLine());
+
 
         outToServer.println("bye");
 

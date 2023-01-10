@@ -16,8 +16,8 @@ public class MyServer {
     }
     public void start(){
         stop = false;
-        new Thread(()->startServer()).start();
-        
+        new Thread(this::startServer).start();
+
     }
 
     private void startServer() {
@@ -30,7 +30,7 @@ public class MyServer {
                     ch.handle(client.getInputStream(), client.getOutputStream());
                     ch.close();
                     client.close();
-                } catch (SocketTimeoutException e) {}
+                } catch (SocketTimeoutException ignored) {}
             }
             server.close();
         } catch (IOException e) {

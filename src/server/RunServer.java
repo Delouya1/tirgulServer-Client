@@ -38,7 +38,8 @@ public class RunServer {
 
     public static void main(String[] args) {
         System.out.println("SERVER SIDE");
-        MyServer server = new MyServer(8080, new TestClientHandler());
+//        MyServer server = new MyServer(8080, new TestClientHandler());
+        MyServer server = new MyServer(8080, new HTTPClientHandler());
         server.start();
         System.out.println("Server Started");
         Scanner s = new Scanner(System.in);
